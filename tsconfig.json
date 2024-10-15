@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "commonjs",
+    "strict": true,
+    "noImplicitAny": false,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist", // onde os arquivos JS compilados serão colocados
+    "rootDir": "./src", // a pasta onde seus arquivos TS estão
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/types"
+    ],
+    "sourceMap": true,
+    "declaration": true,
+    
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}
