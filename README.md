@@ -1,10 +1,10 @@
-# 🎬 **Movie Trailer Rating API**
+# 🎬 **Movie Trailer Rating API** 🎥
 
-## Descrição
+## 📜 **Descrição**
 
 A **Movie Trailer Rating API** é uma API **RESTful** desenvolvida com **TypeScript** e **Express.js** para fornecer acesso a trailers de filmes. O objetivo desta API é permitir que os usuários descubram, assistam e avaliem trailers de filmes, com um sistema de **autenticação** e **controle de acesso baseado em funções** (RBAC).
 
-Para acessar os trailers, os usuários devem se registrar e fazer login. Somente administradores têm permissão para adicionar, editar e excluir filmes da plataforma.
+Para acessar os trailers, os usuários devem se registrar e fazer login. **Somente administradores** têm permissão para adicionar, editar e excluir filmes da plataforma.
 
 ---
 
@@ -90,12 +90,4 @@ O objetivo deste projeto é criar uma API segura e eficiente utilizando as tecno
    - Enviar uma requisição `GET` para `/api/movies` (após autenticação) para listar filmes.
 4. **Adicionar um filme**:
    - Enviar uma requisição `POST` para `/api/movies` (apenas administradores).
-
----
-
-## 📚 **Documentação**
-
-- **Swagger**: A documentação interativa da API pode ser acessada através de um link [aqui](#). Ela fornece detalhes completos sobre os endpoints, parâmetros e exemplos de respostas.
-
----
 
