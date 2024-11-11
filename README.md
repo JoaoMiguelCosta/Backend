@@ -1,45 +1,49 @@
-# Movie Trailer Rating API
+# 🎬 **Movie Trailer Rating API**
 
 ## Descrição
 
-A **Movie Trailer Rating API** é uma API RESTful desenvolvida com **TypeScript** e **Express.js** para fornecer acesso a trailers de filmes. O objetivo da API é permitir que os usuários descubram, assistam e avaliem trailers de filmes. Para acessar os trailers, os usuários devem se registrar e fazer login.
+A **Movie Trailer Rating API** é uma API **RESTful** desenvolvida com **TypeScript** e **Express.js** para fornecer acesso a trailers de filmes. O objetivo desta API é permitir que os usuários descubram, assistam e avaliem trailers de filmes, com um sistema de **autenticação** e **controle de acesso baseado em funções** (RBAC).
 
-A API também oferece **controle de acesso baseado em funções (RBAC)**, permitindo que apenas administradores possam adicionar, editar e excluir filmes, além de gerenciar contas de usuário.
-
----
-
-## Objetivo
-
-O objetivo deste projeto é criar uma API segura e eficiente utilizando as tecnologias **TypeScript**, **Express.js**, **MongoDB** e **JWT** para autenticação de usuários. A API deve suportar:
-
-- Registro e login de usuários
-- Visualização de trailers de filmes
-- Controle de acesso baseado em funções para administradores
-- Gerenciamento de filmes (adicionar, editar, excluir) restrito aos administradores
+Para acessar os trailers, os usuários devem se registrar e fazer login. Somente administradores têm permissão para adicionar, editar e excluir filmes da plataforma.
 
 ---
 
-## Funcionalidades Implementadas
+## 🚀 **Objetivo**
 
-### 🚀 **Autenticação de Usuário**
+O objetivo deste projeto é criar uma API segura e eficiente utilizando as tecnologias **TypeScript**, **Express.js**, **MongoDB** e **JWT** para autenticação de usuários. A API deve suportar as seguintes funcionalidades:
+
+- **Registro e login de usuários**
+- **Visualização de trailers de filmes**
+- **Controle de acesso baseado em funções para administradores**
+- **Gerenciamento de filmes (adicionar, editar, excluir) restrito aos administradores**
+
+---
+
+## ⚙️ **Funcionalidades Implementadas**
+
+### 🔐 **Autenticação de Usuário**
+
 - **Registro de Usuários**: Usuários podem se registrar fornecendo nome, e-mail e senha.
-- **Login de Usuários**: Usuários podem fazer login para obter um **JWT** (JSON Web Token).
-- **JWT**: Implementação de autenticação JWT para garantir que apenas usuários autenticados possam acessar certos endpoints da API.
+- **Login de Usuários**: Usuários podem fazer login para obter um **JWT** (JSON Web Token) e acessar a API de forma segura.
+- **Autenticação JWT**: Garantindo que apenas usuários autenticados possam acessar certos endpoints da API.
 
 ### 🎬 **Visualização de Trailers**
-- **Listagem de Filmes**: Usuários podem visualizar uma lista de filmes, incluindo detalhes como título, data de lançamento, gênero e o link do trailer.
+
+- **Listagem de Filmes**: Usuários podem visualizar uma lista de filmes com detalhes como título, data de lançamento, gênero e link do trailer.
 - **Pesquisa de Filmes**: Implementação de filtros e paginação para facilitar a busca de filmes por nome, gênero ou data de lançamento.
 
-### 🔒 **Controle de Acesso Baseado em Funções**
-- **Funções de Usuário**: Dois papéis são definidos: "User" e "Admin".
-- **Administração de Filmes**: Apenas usuários com o papel "Admin" podem adicionar, editar ou excluir filmes da plataforma.
+### 🔒 **Controle de Acesso Baseado em Funções (RBAC)**
 
-### 📸 **Gerenciamento de Imagens de Cartazes**
+- **Funções de Usuário**: Dois papéis são definidos: **User** e **Admin**.
+- **Administração de Filmes**: Apenas administradores podem adicionar, editar ou excluir filmes da plataforma.
+
+### 🖼️ **Gerenciamento de Imagens de Cartazes**
+
 - **Armazenamento de Cartazes**: Os cartazes dos filmes são armazenados em uma pasta estática no servidor e referenciados nos detalhes do filme.
 
 ---
 
-## Tecnologias Utilizadas
+## 💻 **Tecnologias Utilizadas**
 
 - **TypeScript**: Para garantir um código mais seguro e fácil de manter.
 - **Express.js**: Framework minimalista para construir APIs no Node.js.
@@ -52,24 +56,46 @@ O objetivo deste projeto é criar uma API segura e eficiente utilizando as tecno
 
 ---
 
-## Endpoints da API
+## 📂 **Endpoints da API**
 
 ### 🚀 **Autenticação**
 
-- **POST** `/auth/register`: Registro de usuário.
-- **POST** `/auth/login`: Login para obter um JWT.
-- **GET** `/auth/users`: (Admin somente) Buscar lista de usuários.
-- **PUT** `/auth/users/:id`: (Admin somente) Atualizar detalhes de usuário.
-- **DELETE** `/auth/users/:id`: (Admin somente) Deletar usuário.
+- `POST /auth/register`: **Registro de usuário**.
+- `POST /auth/login`: **Login** para obter um JWT.
+- `GET /auth/users`: **(Admin somente)** Buscar lista de usuários.
+- `PUT /auth/users/:id`: **(Admin somente)** Atualizar detalhes de usuário.
+- `DELETE /auth/users/:id`: **(Admin somente)** Deletar usuário.
 
 ### 🎬 **Filmes**
 
-- **GET** `/api/movies`: (Somente usuários autenticados) Buscar lista de filmes com detalhes.
-- **GET** `/api/movies/search`: (Somente usuários autenticados) Buscar filmes com filtros de nome, gênero e data de lançamento.
-- **POST** `/api/movies`: (Admin somente) Adicionar um novo filme.
-- **PUT** `/api/movies/:id`: (Admin somente) Atualizar detalhes de um filme.
-- **DELETE** `/api/movies/:id`: (Admin somente) Deletar um filme.
+- `GET /api/movies`: **(Somente usuários autenticados)** Buscar lista de filmes com detalhes.
+- `GET /api/movies/search`: **(Somente usuários autenticados)** Buscar filmes com filtros de nome, gênero e data de lançamento.
+- `POST /api/movies`: **(Admin somente)** Adicionar um novo filme.
+- `PUT /api/movies/:id`: **(Admin somente)** Atualizar detalhes de um filme.
+- `DELETE /api/movies/:id`: **(Admin somente)** Deletar um filme.
 
-### 📸 **Imagens de Cartazes**
+### 🖼️ **Imagens de Cartazes**
 
-- **GET** `/posters/{imageName}`: Acessar os cartazes dos filmes armazenados.
+- `GET /posters/{imageName}`: Acessar os cartazes dos filmes armazenados no servidor.
+
+---
+
+## 📈 **Exemplo de Uso**
+
+1. **Registrar um novo usuário**:
+   - Enviar uma requisição `POST` para `/auth/register` com os dados do usuário (nome, e-mail, senha).
+2. **Fazer login e obter JWT**:
+   - Enviar uma requisição `POST` para `/auth/login` com as credenciais.
+3. **Buscar filmes**:
+   - Enviar uma requisição `GET` para `/api/movies` (após autenticação) para listar filmes.
+4. **Adicionar um filme**:
+   - Enviar uma requisição `POST` para `/api/movies` (apenas administradores).
+
+---
+
+## 📚 **Documentação**
+
+- **Swagger**: A documentação interativa da API pode ser acessada através de um link [aqui](#). Ela fornece detalhes completos sobre os endpoints, parâmetros e exemplos de respostas.
+
+---
+
